@@ -1,0 +1,39 @@
+From f2084915bafeffcd06c1a2e2e2dac09b8f2bcfaa Mon Sep 17 00:00:00 2001
+From: vagrant <vagrant@localhost.localdomain>
+Date: Wed, 12 Jul 2023 17:45:51 +0000
+Subject: [PATCH] Patched
+
+---
+ src/error.c          | 2 +-
+ src/libefivar.abixml | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/error.c b/src/error.c
+index fcbba0d..aa3a852 100644
+--- a/src/error.c
++++ b/src/error.c
+@@ -13,7 +13,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <sys/param.h>
+-#include <sys/random.h>
++#include <linux/random.h>
+ #include <unistd.h>
+ 
+ #include "efiboot.h"
+diff --git a/src/libefivar.abixml b/src/libefivar.abixml
+index 6437907..d0eec2e 100644
+--- a/src/libefivar.abixml
++++ b/src/libefivar.abixml
+@@ -2098,7 +2098,7 @@
+       <parameter type-id='type-id-30'/>
+       <return type-id='type-id-21'/>
+     </function-decl>
+-    <function-decl name='getrandom' filepath='/usr/include/sys/random.h' line='34' column='1' visibility='default' binding='global' size-in-bits='64'>
++    <function-decl name='getrandom' filepath='/usr/include/linux/random.h' line='34' column='1' visibility='default' binding='global' size-in-bits='64'>
+       <parameter type-id='type-id-12'/>
+       <parameter type-id='type-id-29'/>
+       <parameter type-id='type-id-11'/>
+-- 
+1.8.3.1
+
